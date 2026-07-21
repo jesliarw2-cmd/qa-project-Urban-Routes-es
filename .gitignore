@@ -1,0 +1,17 @@
+# Entorno virtual
+venv/
+.venv/
+
+# Configuración del IDE de PyCharm
+.idea/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Credenciales o variables secretas
+.env

@@ -1,0 +1,34 @@
+# Proyecto Urban Routes - Automatización de Pruebas
+
+## Descripción del Proyecto
+Este proyecto contiene una suite de pruebas automatizadas de extremo a extremo (E2E) para la aplicación web **Urban Routes**. El objetivo principal es verificar el correcto funcionamiento del flujo crítico de solicitud de un taxi, desde la configuración de la ruta inicial y la selección de la tarifa Comfort, hasta la adición de métodos de pago, personalización del pedido (manta, pañuelos, helados) y la confirmación final de la asignación del conductor.
+
+Las pruebas están estructuradas bajo el patrón de diseño **Page Object Model (POM)** para garantizar la mantenibilidad, escalabilidad y la separación clara entre la lógica de las páginas y la lógica de las pruebas.
+
+
+## Tecnologías y Técnicas Utilizadas
+
+*   **Lenguaje:** Python 3.x
+*   **Automatización Web:** Selenium WebDriver
+*   **Gestión de Esperas:** WebDriverWait y Expected Conditions (para garantizar la sincronización y evitar fallos por tiempos de carga).
+*   **Patrón de Diseño:** Page Object Model (POM).
+*   **Estructura de Pruebas:** Pruebas modulares organizadas para evaluar componentes independientes (direcciones, tarifas, teléfono, pagos, requisitos especiales y conductor).
+*   **Técnicas avanzadas:** Interacción con el portapapeles/registros de red (`performance logs`) para la recuperación automática de códigos de confirmación SMS mediante scripts auxiliares.
+
+
+## Instrucciones para Ejecutar las Pruebas
+
+Sigue estos pasos para configurar tu entorno local y ejecutar la suite de pruebas:
+
+### 1. Clonar el repositorio
+```bash
+git clone <URL_DE_TU_REPOSITORIO>
+cd qa-project-Urban-Routes-es
+
+#Instalar las dependencias
+**Instalar Selenium y las librerías necesarias:
+pip install selenium
+pip install pytest
+
+#Ejecutar las pruebas
+**Ejecutar las pruebas desde test_urban_routes.py

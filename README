@@ -1,34 +1,46 @@
-# Proyecto Urban Routes - Automatización de Pruebas
+# Urban Routes — Automatización de pruebas UI
+
+Proyecto del Sprint 9 del programa QA Engineer de TripleTen. Automatización del
+flujo completo de pedido de un taxi en la aplicación web Urban Routes, usando
+Selenium WebDriver y el patrón Page Object Model (POM).
 
 ## Descripción del Proyecto
-Este proyecto contiene una suite de pruebas automatizadas de extremo a extremo (E2E) para la aplicación web **Urban Routes**. El objetivo principal es verificar el correcto funcionamiento del flujo crítico de solicitud de un taxi, desde la configuración de la ruta inicial y la selección de la tarifa Comfort, hasta la adición de métodos de pago, personalización del pedido (manta, pañuelos, helados) y la confirmación final de la asignación del conductor.
 
-Las pruebas están estructuradas bajo el patrón de diseño **Page Object Model (POM)** para garantizar la mantenibilidad, escalabilidad y la separación clara entre la lógica de las páginas y la lógica de las pruebas.
+El proyecto cubre de principio a fin el flujo de solicitud de un viaje en Urban
+Routes: configuración de la dirección de origen y destino, selección de la
+tarifa Comfort, ingreso del número de teléfono, registro de una tarjeta de
+crédito, envío de un mensaje al conductor, solicitud de manta y pañuelos,
+pedido de helados, y la espera hasta que se muestra la información del
+conductor asignado.
 
 
-## Tecnologías y Técnicas Utilizadas
+## Tecnologías y técnicas utilizadas
 
-*   **Lenguaje:** Python 3.x
-*   **Automatización Web:** Selenium WebDriver
-*   **Gestión de Esperas:** WebDriverWait y Expected Conditions (para garantizar la sincronización y evitar fallos por tiempos de carga).
-*   **Patrón de Diseño:** Page Object Model (POM).
-*   **Estructura de Pruebas:** Pruebas modulares organizadas para evaluar componentes independientes (direcciones, tarifas, teléfono, pagos, requisitos especiales y conductor).
-*   **Técnicas avanzadas:** Interacción con el portapapeles/registros de red (`performance logs`) para la recuperación automática de códigos de confirmación SMS mediante scripts auxiliares.
-
+- Python
+- Selenium WebDriver
+- Pytest (los casos de prueba siguen la convención `test_`)
+- Patrón de diseño Page Object Model (POM), separando los localizadores y
+  métodos de interacción (`helpers_and_page.py`) de los casos de prueba (`main.py`)
+- Manejo de esperas explícitas (`WebDriverWait`) para elementos dinámicos,
+  como el código SMS de confirmación de tarjeta
+- `.gitignore` para excluir archivos de entorno y configuración local
 
 ## Instrucciones para Ejecutar las Pruebas
 
-Sigue estos pasos para configurar tu entorno local y ejecutar la suite de pruebas:
+1. Clona el repositorio y ábrelo en PyCharm (o tu IDE preferido).
+2. En `data.py`, reemplaza la URL base con la URL del servidor de Urban Routes.
+3. Instala las dependencias necesarias (Selenium, pytest).
+4. Ejecuta las pruebas desde la terminal:
 
-### 1. Clonar el repositorio
 ```bash
-git clone <URL_DE_TU_REPOSITORIO>
-cd qa-project-Urban-Routes-es
+   pytest main.py
+```
 
-#Instalar las dependencias
-**Instalar Selenium y las librerías necesarias:
-pip install selenium
-pip install pytest
+## Notas
+
+Las pruebas cubren el flujo completo de pedido de un taxi, incluyendo la
+espera opcional a que aparezca la información del conductor asignado en el
+modal de búsqueda.
 
 #Ejecutar las pruebas
 **Ejecutar las pruebas desde test_urban_routes.py
